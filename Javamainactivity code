@@ -1,0 +1,86 @@
+package com.example.android.courtcounter;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+/**
+ * IMPORTANT: Make sure you are using the correct package name.
+ * This example uses the package name:
+ * package com.example.android.justjava
+ * If you get an error when copying this code into Android studio, update it to match teh package name found
+ * in the project's AndroidManifest.xml file.*/
+import java.text.NumberFormat;
+
+public class MainActivity extends AppCompatActivity {
+    int scoreTeamA = 0;
+    int scoreTeamB = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    //score 3will be given to team 1
+    public void Score3(View view) {
+        scoreTeamA = scoreTeamA + 3;
+        displayForTeamA(scoreTeamA);
+    }
+
+    //score 2will be given to team 1
+    public void Score2(View view) {
+        scoreTeamA = scoreTeamA + 2;
+        displayForTeamA(scoreTeamA);
+
+    }
+
+    //score 1will be given to team 1
+    public void Score1(View view) {
+        scoreTeamA = scoreTeamA + 1;
+        displayForTeamA(scoreTeamA);
+    }
+
+    //details for team B
+
+    //score 1 will be given to team B
+    public void ScoreB1(View view) {
+        scoreTeamB = scoreTeamB + 1;
+        displayForTeamB(scoreTeamB);
+    }
+
+    //score 2 will be given to team B
+    public void ScoreB2(View view) {
+        scoreTeamB = scoreTeamB + 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    //score 3 will be given to team B
+    public void ScoreB3(View view) {
+        scoreTeamB = scoreTeamB + 3;
+        displayForTeamB(scoreTeamB);
+    }
+    //Reset the score.
+    public void reset(View view) {
+        scoreTeamA = 0;
+        displayForTeamA(scoreTeamA);
+        scoreTeamB = 0;
+        displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     * Displays the given score for Team A.
+     */
+    public void displayForTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.score_team_A);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.score_team_B);
+        scoreView.setText(String.valueOf(score));
+    }
+}
